@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/",
+      "note": "createCanvas、draw、2D図形、WebGL、saveCanvasなど、p5.jsスケッチ制作の基準にする。"
+    },
+    {
+      "label": "p5.js",
+      "url": "https://p5js.org/",
+      "note": "p5.jsはクリエイティブコーディング向けのオープンソースJavaScriptライブラリで、スケッチ公開との相性が良い。"
+    }
+  ],
+  "drops": [
+    {
+      "date": "2026-08-11",
+      "title": "Sketch Bloom Grid",
+      "loopSeconds": 12,
+      "palette": [0.98, 0.42, 0.25, 0.18, 0.78, 0.94],
+      "copy": "p5.js VJ Siteの最初のフレーム。円弧、グリッド、ノイズ風の揺れを使った、スケッチ感のある抽象VJループ。",
+      "why": "p5.jsはコードスケッチとして読みやすく、日次で小さな生成ルールを公開する運用に向く。Canvas 2Dよりも制作メモやコード共有の文脈が強く、ブラウザ上のライブサンプルと販売用映像への導線を分けやすい。"
+    }
+  ]
+}
