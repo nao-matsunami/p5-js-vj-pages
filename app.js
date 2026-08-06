@@ -1,5 +1,5 @@
 const stage = document.querySelector("#p5-stage");
-const todayIso = localIsoDate(new Date());
+const initialIso = new URLSearchParams(window.location.search).get("date") || localIsoDate(new Date());
 let sources = [];
 let drops = [];
 let purchaseConfig = { enabled: false, label: "Full Pack", url: "", note: "映像データの購入先は準備中です。" };
@@ -19,7 +19,7 @@ initialize();
 
 async function initialize() {
   await loadData();
-  activePiece = pickPiece(todayIso);
+  activePiece = pickPiece(initialIso);
   renderContent();
   startSketch();
 }
