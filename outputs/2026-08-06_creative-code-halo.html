@@ -5,25 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Creative Code Halo / p5.js VJ Site</title>
     <style>
-      :root { color-scheme: dark; --bg: #050607; --ink: #f4f7f8; --muted: #9aa7ac; --line: #263236; }
-      * { box-sizing: border-box; }
-      body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-      header { min-height: 104px; padding: 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; align-items: center; }
-      h1 { margin: 0; font-size: clamp(22px, 4vw, 42px); line-height: 1; }
-      p { margin: 6px 0 0; color: var(--muted); line-height: 1.6; }
-      a { color: var(--ink); }
-      iframe { display: block; width: 100%; height: calc(100vh - 104px); border: 0; background: #000; }
-      @media (max-width: 760px) { header { display: block; } iframe { height: calc(100vh - 142px); } }
+      :root {
+        color-scheme: dark;
+        --bg: #020304;
+        --ink: #f4fbfb;
+        --muted: #98a8aa;
+        --cyan: #37f3ff;
+        --violet: #9a64ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      .hud {
+        position: fixed;
+        inset: 18px 18px auto;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        pointer-events: none;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.76);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(21px, 4.2vw, 52px);
+        line-height: 0.96;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: clamp(12px, 1.4vw, 15px);
+        line-height: 1.55;
+      }
+
+      a {
+        pointer-events: auto;
+        align-self: flex-start;
+        min-width: 112px;
+        padding: 10px 13px;
+        border: 1px solid rgba(244, 251, 251, 0.28);
+        background: rgba(2, 3, 4, 0.44);
+        color: var(--ink);
+        font-size: 12px;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+        backdrop-filter: blur(12px);
+      }
+
+      .meter {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        left: 18px;
+        z-index: 2;
+        height: 2px;
+        overflow: hidden;
+        background: rgba(244, 251, 251, 0.13);
+      }
+
+      .meter span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform-origin: left center;
+        background: linear-gradient(90deg, var(--cyan), var(--violet), #ff5f42);
+        animation: loop-meter 20s linear infinite;
+      }
+
+      @keyframes loop-meter {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+      }
+
+      @media (max-width: 680px) {
+        .hud {
+          display: block;
+        }
+
+        a {
+          display: inline-block;
+          margin-top: 12px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header>
+    <div class="hud">
       <div>
         <h1>Creative Code Halo</h1>
-        <p>2026-08-06 / p5.js VJ Site / 20s loop</p>
+        <p>p5.js standalone sample / 2026-08-06 / locked 20 second loop</p>
       </div>
       <a href="../days/2026-08-06.html">Daily report</a>
-    </header>
-    <iframe src="../live.html?date=2026-08-06" title="Creative Code Halo live preview"></iframe>
+    </div>
+    <div class="meter" aria-hidden="true"><span></span></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+    <script>
+      const loopSeconds = 20;
+      const glyphs = ["p5", "VJ", "LOOP", "HALO", "CODE", "DAILY"];
+      let pointerX = 0;
+      let pointerY = 0;
+      let startMillis = 0;
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        pixelDensity(Math.min(window.devicePixelRatio || 1, 2));
+        textFont("ui-monospace, SFMono-Regular, Menlo, monospace");
+        startMillis = millis();
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      function mouseMoved() {
+        pointerX = (mouseX / width - 0.5) * 2;
+        pointerY = (mouseY / height - 0.5) * 2;
+      }
+
+      function mousePressed() {
+        startMillis = millis();
+      }
+
+      function draw() {
+        const elapsed = (millis() - startMillis) / 1000;
+        const cycle = (elapsed % loopSeconds) / loopSeconds;
+        const phase = cycle * TWO_PI;
+        const cx = width * (0.5 + pointerX * 0.035);
+        const cy = height * (0.52 + pointerY * 0.035);
+        const scale = min(width, height);
+
+        blendMode(BLEND);
+        background(2, 3, 4);
+
+        noStroke();
+        for (let i = 0; i < 32; i += 1) {
+          const t = i / 31;
+          const radius = scale * (0.06 + t * 0.78);
+          fill(30, 240, 255, 8 * (1 - t));
+          ellipse(cx, cy, radius * 2.1, radius * 1.16);
+        }
+
+        blendMode(ADD);
+        drawHalo(cx, cy, scale, phase);
+        drawGlyphs(cx, cy, scale, phase);
+        drawComets(cx, cy, scale, phase);
+        drawScanline(cycle, phase);
+      }
+
+      function drawHalo(cx, cy, scale, phase) {
+        push();
+        translate(cx, cy);
+        rotate(sin(phase) * 0.1);
+        noFill();
+        for (let i = 0; i < 14; i += 1) {
+          const t = i / 14;
+          const radius = scale * (0.12 + t * 0.5 + sin(phase * 2 + i) * 0.01);
+          const alpha = 38 + 120 * (1 - t);
+          strokeWeight(max(1, scale * (0.0014 + t * 0.0008)));
+          stroke(i % 3 === 0 ? color(255, 95, 66, alpha) : i % 3 === 1 ? color(55, 243, 255, alpha) : color(154, 100, 255, alpha));
+          drawingContext.setLineDash([scale * (0.018 + t * 0.01), scale * (0.025 + t * 0.012)]);
+          drawingContext.lineDashOffset = -phase * radius * 0.12;
+          ellipse(0, 0, radius * 2.2, radius * 1.12);
+        }
+        drawingContext.setLineDash([]);
+        pop();
+      }
+
+      function drawGlyphs(cx, cy, scale, phase) {
+        textAlign(CENTER, CENTER);
+        textSize(max(12, scale * 0.034));
+        textStyle(BOLD);
+        for (let i = 0; i < 42; i += 1) {
+          const lane = i % 6;
+          const angle = phase * (0.22 + lane * 0.02) + i * 0.58;
+          const radius = scale * (0.16 + lane * 0.073);
+          const x = cx + cos(angle) * radius * 1.42;
+          const y = cy + sin(angle) * radius * 0.74;
+          const pulse = 0.5 + 0.5 * sin(phase * 3 + i);
+          fill(i % 4 === 0 ? color(255, 212, 75, 68 + pulse * 155) : color(244, 251, 251, 45 + pulse * 105));
+          push();
+          translate(x, y);
+          rotate(angle + HALF_PI);
+          text(glyphs[i % glyphs.length], 0, 0);
+          pop();
+        }
+      }
+
+      function drawComets(cx, cy, scale, phase) {
+        for (let i = 0; i < 72; i += 1) {
+          const seed = i * 0.618;
+          const angle = phase * (0.6 + (i % 5) * 0.025) + seed * TWO_PI;
+          const radius = scale * (0.08 + ((i * 17) % 100) / 100 * 0.66);
+          const x = cx + cos(angle) * radius * 1.46;
+          const y = cy + sin(angle) * radius * 0.82;
+          const size = 2 + (i % 5);
+          fill(i % 2 === 0 ? color(55, 243, 255, 80) : color(255, 95, 66, 80));
+          circle(x, y, size);
+          stroke(244, 251, 251, 22);
+          line(x, y, x - cos(angle) * size * 7, y - sin(angle) * size * 7);
+        }
+      }
+
+      function drawScanline(cycle, phase) {
+        const y = height * cycle;
+        noStroke();
+        for (let i = 0; i < 24; i += 1) {
+          fill(55, 243, 255, 10 - i * 0.35);
+          rect(0, y - i * 3, width, 2);
+        }
+        stroke(244, 251, 251, 22 + sin(phase * 4) * 12);
+        for (let row = 0; row < height; row += 8) {
+          line(0, row + 0.5, width, row + 0.5);
+        }
+      }
+    </script>
   </body>
 </html>

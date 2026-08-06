@@ -58,8 +58,8 @@
     {
       "title": "今日のミニ試作候補",
       "titleEn": "Today's mini prototype candidate",
-      "body": "Creative Code Halo を 20 秒でループするVJサンプルとして固定しました。GitHub Pagesでは軽量プレビューを見せ、販売用のMP4やalpha MOVは選抜後にMac miniで固定FPSレンダーします。",
-      "bodyEn": "Creative Code Halo is fixed as a 20-second looping VJ sample. GitHub Pages carries the lightweight preview, while saleable MP4 and alpha MOV masters should be rendered later on the Mac mini at fixed FPS.",
+      "body": "Creative Code Halo を 20 秒でループする独立p5.jsサンプルとして固定しました。出力ページ単体にスケッチ本体を持たせ、整数周期の位相で描画するため、ブラウザ確認とMac miniでの固定FPS録画へつなげやすい構成です。",
+      "bodyEn": "Creative Code Halo is fixed as a standalone 20-second looping p5.js sample. The output page carries the sketch directly and uses integer-cycle phase animation, making it practical for browser review and fixed-FPS recording on the Mac mini.",
       "links": [
         {
           "label": "Today's sample",
