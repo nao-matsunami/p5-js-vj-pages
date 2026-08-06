@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-11",
+  "headline": "Sketch Bloom Grid",
+  "headlineEn": "Sketch Bloom Grid",
+  "summary": "p5.js VJ Siteの最初のフレーム。円弧、グリッド、ノイズ風の揺れを使った、スケッチ感のある抽象VJループ。",
+  "summaryEn": "p5.js VJ Siteの最初のフレーム。円弧、グリッド、ノイズ風の揺れを使った、スケッチ感のある抽象VJループ。",
+  "links": [
+    {
+      "label": "Today's sample",
+      "url": "../outputs/2026-08-11_sketch-bloom-grid.html"
+    },
+    {
+      "label": "Live preview",
+      "url": "../live.html"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js",
+      "url": "https://p5js.org/"
+    }
+  ],
+  "sections": [
+    {
+      "title": "今日の制作メモ",
+      "titleEn": "Production note",
+      "body": "p5.jsはコードスケッチとして読みやすく、日次で小さな生成ルールを公開する運用に向く。Canvas 2Dよりも制作メモやコード共有の文脈が強く、ブラウザ上のライブサンプルと販売用映像への導線を分けやすい。",
+      "bodyEn": "p5.jsはコードスケッチとして読みやすく、日次で小さな生成ルールを公開する運用に向く。Canvas 2Dよりも制作メモやコード共有の文脈が強く、ブラウザ上のライブサンプルと販売用映像への導線を分けやすい。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js",
+          "url": "https://p5js.org/"
+        }
+      ]
+    },
+    {
+      "title": "販売用データへの展開",
+      "titleEn": "Sales package route",
+      "body": "p5.js VJ Site はGitHub Pages上では軽量なサンプルとして公開し、MP4、alpha MOV、プロジェクトファイルなどの重い販売データはGumroadまたはPatreonへ置く前提です。",
+      "bodyEn": "p5.js VJ Site is published on GitHub Pages as a lightweight sample. Heavy saleable files such as MP4, alpha MOV, and project files should live on Gumroad or Patreon."
+    }
+  ]
+}
