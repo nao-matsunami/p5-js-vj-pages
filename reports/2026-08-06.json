@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-06",
+  "headline": "Creative Code Halo",
+  "headlineEn": "Creative Code Halo",
+  "summary": "ブラウザのライブプレビューと販売用MP4/MOV生成へつなぐp5.js素材。",
+  "summaryEn": "ブラウザのライブプレビューと販売用MP4/MOV生成へつなぐp5.js素材。",
+  "links": [
+    {
+      "label": "Today's sample",
+      "url": "../outputs/2026-08-06_creative-code-halo.html"
+    },
+    {
+      "label": "Live preview",
+      "url": "../live.html"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js",
+      "url": "https://p5js.org/"
+    },
+    {
+      "label": "Source label",
+      "url": "https://example.com/"
+    }
+  ],
+  "sections": [
+    {
+      "title": "今日の制作メモ",
+      "titleEn": "Production note",
+      "body": "p5.jsのdrawループを整数周期の位相で設計すると、録画時間をloopSecondsに合わせるだけで継ぎ目のない映像にしやすい。",
+      "bodyEn": "p5.jsのdrawループを整数周期の位相で設計すると、録画時間をloopSecondsに合わせるだけで継ぎ目のない映像にしやすい。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js",
+          "url": "https://p5js.org/"
+        }
+      ]
+    },
+    {
+      "title": "Daily Research 2026-08-06",
+      "titleEn": "Daily Research 2026-08-06",
+      "body": "今日の検索では、軽量なWebプレビューはGitHub Pagesへ置き、販売用の高解像度MP4/MOVは外部販売先へ置く運用を継続する判断にした。",
+      "bodyEn": "今日の検索では、軽量なWebプレビューはGitHub Pagesへ置き、販売用の高解像度MP4/MOVは外部販売先へ置く運用を継続する判断にした。",
+      "links": [
+        {
+          "label": "Source label",
+          "url": "https://example.com/"
+        }
+      ]
+    },
+    {
+      "title": "今日のミニ試作候補",
+      "titleEn": "Today's mini prototype candidate",
+      "body": "Creative Code Halo を 20 秒でループするVJサンプルとして固定しました。GitHub Pagesでは軽量プレビューを見せ、販売用のMP4やalpha MOVは選抜後にMac miniで固定FPSレンダーします。",
+      "bodyEn": "Creative Code Halo is fixed as a 20-second looping VJ sample. GitHub Pages carries the lightweight preview, while saleable MP4 and alpha MOV masters should be rendered later on the Mac mini at fixed FPS.",
+      "links": [
+        {
+          "label": "Today's sample",
+          "url": "../outputs/2026-08-06_creative-code-halo.html"
+        }
+      ]
+    }
+  ]
+}
