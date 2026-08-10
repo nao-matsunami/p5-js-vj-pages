@@ -20,6 +20,14 @@
     {
       "label": "p5.js",
       "url": "https://p5js.org/"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js Tutorials",
+      "url": "https://p5js.org/tutorials/"
     }
   ],
   "sections": [
@@ -42,9 +50,18 @@
     {
       "title": "Daily Research 2026-08-10",
       "titleEn": "Daily Research 2026-08-10",
-      "body": "p5.js VJ Site の日次レポートを追加。追加調査がある日は --notes-file で検索要約と出典を差し込む。",
-      "bodyEn": "p5.js VJ Site の日次レポートを追加。追加調査がある日は --notes-file で検索要約と出典を差し込む。",
-      "links": []
+      "body": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+      "bodyEn": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js Tutorials",
+          "url": "https://p5js.org/tutorials/"
+        }
+      ]
     },
     {
       "title": "今日のミニ試作候補",
