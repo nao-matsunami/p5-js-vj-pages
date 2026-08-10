@@ -20,6 +20,14 @@
     {
       "label": "p5.js",
       "url": "https://p5js.org/"
+    },
+    {
+      "label": "p5.js createCanvas",
+      "url": "https://p5js.org/reference/p5/createCanvas/"
+    },
+    {
+      "label": "p5.js frameRate",
+      "url": "https://p5js.org/reference/p5/frameRate/"
     }
   ],
   "sections": [
@@ -40,10 +48,32 @@
       ]
     },
     {
-      "title": "販売用データへの展開",
-      "titleEn": "Sales package route",
-      "body": "p5.js VJ Site はGitHub Pages上では軽量なサンプルとして公開し、MP4、alpha MOV、プロジェクトファイルなどの重い販売データはGumroadまたはPatreonへ置く前提です。",
-      "bodyEn": "p5.js VJ Site is published on GitHub Pages as a lightweight sample. Heavy saleable files such as MP4, alpha MOV, and project files should live on Gumroad or Patreon."
+      "title": "Daily Research 2026-08-11",
+      "titleEn": "Daily Research 2026-08-11",
+      "body": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+      "bodyEn": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+      "links": [
+        {
+          "label": "p5.js createCanvas",
+          "url": "https://p5js.org/reference/p5/createCanvas/"
+        },
+        {
+          "label": "p5.js frameRate",
+          "url": "https://p5js.org/reference/p5/frameRate/"
+        }
+      ]
+    },
+    {
+      "title": "今日のミニ試作候補",
+      "titleEn": "Today's mini prototype candidate",
+      "body": "Sketch Bloom Grid を 12 秒でループするVJサンプルとして固定しました。GitHub Pagesでは軽量プレビューを見せ、販売用のMP4やalpha MOVは選抜後にMac miniで固定FPSレンダーします。",
+      "bodyEn": "Sketch Bloom Grid is fixed as a 12-second looping VJ sample. GitHub Pages carries the lightweight preview, while saleable MP4 and alpha MOV masters should be rendered later on the Mac mini at fixed FPS.",
+      "links": [
+        {
+          "label": "Today's sample",
+          "url": "../outputs/2026-08-11_sketch-bloom-grid.html"
+        }
+      ]
     }
   ]
 }
