@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-13",
+  "headline": "Sketch Bloom Grid",
+  "headlineEn": "Sketch Bloom Grid",
+  "summary": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+  "summaryEn": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+  "links": [
+    {
+      "label": "Today's sample",
+      "url": "../outputs/2026-08-13_sketch-bloom-grid.html"
+    },
+    {
+      "label": "Live preview",
+      "url": "../live.html"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js",
+      "url": "https://p5js.org/"
+    },
+    {
+      "label": "p5.js createCanvas",
+      "url": "https://p5js.org/reference/p5/createCanvas/"
+    },
+    {
+      "label": "p5.js frameRate",
+      "url": "https://p5js.org/reference/p5/frameRate/"
+    }
+  ],
+  "sections": [
+    {
+      "title": "今日の制作メモ",
+      "titleEn": "Production note",
+      "body": "p5.jsはクリエイティブコーディングとスケッチ共有に向く。小さなdrawループで日次素材を作れるため、制作メモとコード公開の相性が良い。",
+      "bodyEn": "p5.jsはクリエイティブコーディングとスケッチ共有に向く。小さなdrawループで日次素材を作れるため、制作メモとコード公開の相性が良い。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js",
+          "url": "https://p5js.org/"
+        }
+      ]
+    },
+    {
+      "title": "Daily Research 2026-08-13",
+      "titleEn": "Daily Research 2026-08-13",
+      "body": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+      "bodyEn": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+      "links": [
+        {
+          "label": "p5.js createCanvas",
+          "url": "https://p5js.org/reference/p5/createCanvas/"
+        },
+        {
+          "label": "p5.js frameRate",
+          "url": "https://p5js.org/reference/p5/frameRate/"
+        }
+      ]
+    },
+    {
+      "title": "今日のミニ試作候補",
+      "titleEn": "Today's mini prototype candidate",
+      "body": "Sketch Bloom Grid を 12 秒でループするVJサンプルとして固定しました。GitHub Pagesでは軽量プレビューを見せ、販売用のMP4やalpha MOVは選抜後にMac miniで固定FPSレンダーします。",
+      "bodyEn": "Sketch Bloom Grid is fixed as a 12-second looping VJ sample. GitHub Pages carries the lightweight preview, while saleable MP4 and alpha MOV masters should be rendered later on the Mac mini at fixed FPS.",
+      "links": [
+        {
+          "label": "Today's sample",
+          "url": "../outputs/2026-08-13_sketch-bloom-grid.html"
+        }
+      ]
+    }
+  ]
+}
