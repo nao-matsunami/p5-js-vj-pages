@@ -13,6 +13,40 @@
   ],
   "drops": [
     {
+      "date": "2026-08-14",
+      "title": "Learning Loop Field",
+      "loopSeconds": 8,
+      "palette": [
+        0.263,
+        0.94,
+        0.573,
+        0.744,
+        0.306,
+        0.9
+      ],
+      "copy": "日次スケッチとして公開しやすい、短い生成ルールから作る抽象ループ。",
+      "why": "Canvas 2Dよりも教材・スケッチ文化が強く、見た人がコードの意図を追いやすい。サンプル公開と販売用素材の導線を分けやすい。",
+      "research": [
+        {
+          "date": "2026-08-14",
+          "summary": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+          "sources": [
+            {
+              "label": "p5.js Reference",
+              "url": "https://p5js.org/reference/",
+              "note": "p5.js API確認の基準。"
+            },
+            {
+              "label": "p5.js Tutorials",
+              "url": "https://p5js.org/tutorials/",
+              "note": "スケッチ制作の参照に使う。"
+            }
+          ],
+          "updatedAt": "2026-08-13T21:45:16.049Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-13",
       "title": "Sketch Bloom Grid",
       "loopSeconds": 12,
