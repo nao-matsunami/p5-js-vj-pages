@@ -13,6 +13,40 @@
   ],
   "drops": [
     {
+      "date": "2026-08-16",
+      "title": "Sketch Bloom Grid",
+      "loopSeconds": 16,
+      "palette": [
+        0.541,
+        0.94,
+        0.263,
+        0.306,
+        0.383,
+        0.9
+      ],
+      "copy": "ブラウザのライブプレビューと販売用MP4/MOV生成へつなぐp5.js素材。",
+      "why": "p5.jsのdrawループを整数周期の位相で設計すると、録画時間をloopSecondsに合わせるだけで継ぎ目のない映像にしやすい。",
+      "research": [
+        {
+          "date": "2026-08-16",
+          "summary": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+          "sources": [
+            {
+              "label": "p5.js Reference",
+              "url": "https://p5js.org/reference/",
+              "note": "p5.js API確認の基準。"
+            },
+            {
+              "label": "p5.js Tutorials",
+              "url": "https://p5js.org/tutorials/",
+              "note": "スケッチ制作の参照に使う。"
+            }
+          ],
+          "updatedAt": "2026-08-15T21:45:22.535Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-15",
       "title": "Arc Notebook Pulse",
       "loopSeconds": 20,
