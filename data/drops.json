@@ -13,6 +13,40 @@
   ],
   "drops": [
     {
+      "date": "2026-08-17",
+      "title": "Dot Matrix Study",
+      "loopSeconds": 12,
+      "palette": [
+        0.369,
+        0.263,
+        0.94,
+        0.9,
+        0.565,
+        0.306
+      ],
+      "copy": "日次スケッチとして公開しやすい、短い生成ルールから作る抽象ループ。",
+      "why": "Canvas 2Dよりも教材・スケッチ文化が強く、見た人がコードの意図を追いやすい。サンプル公開と販売用素材の導線を分けやすい。",
+      "research": [
+        {
+          "date": "2026-08-17",
+          "summary": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+          "sources": [
+            {
+              "label": "p5.js createCanvas",
+              "url": "https://p5js.org/reference/p5/createCanvas/",
+              "note": "キャンバス初期化の確認。"
+            },
+            {
+              "label": "p5.js frameRate",
+              "url": "https://p5js.org/reference/p5/frameRate/",
+              "note": "フレーム制御の確認。"
+            }
+          ],
+          "updatedAt": "2026-08-16T21:45:17.753Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-16",
       "title": "Sketch Bloom Grid",
       "loopSeconds": 16,
