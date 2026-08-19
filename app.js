@@ -70,6 +70,7 @@ function renderP5(p, piece, phase, alpha) {
   const size = Math.min(w, h);
   const cycle = phase * Math.PI * 2;
   const variant = pieceVariant(piece);
+  const engine = pieceEngine(piece);
   const a = rgb(piece.palette.slice(0, 3));
   const b = rgb(piece.palette.slice(3, 6));
   p.clear();
@@ -81,6 +82,12 @@ function renderP5(p, piece, phase, alpha) {
       p.fill(lerp(a[0], b[0], t) * 0.12, lerp(a[1], b[1], t) * 0.12, lerp(a[2], b[2], t) * 0.12, 90);
       p.circle(cx + Math.cos(cycle + i) * size * 0.08, cy + Math.sin(cycle * 0.75 + i) * size * 0.08, size * (0.55 - i * 0.045));
     }
+  }
+  if (engine !== "sketch-rings") {
+    p.blendMode(p.ADD);
+    drawP5Engine(p, engine, piece, cycle, cx, cy, size, a, b);
+    p.blendMode(p.BLEND);
+    return;
   }
   p.blendMode(p.ADD);
   p.noFill();
@@ -114,6 +121,41 @@ function renderP5(p, piece, phase, alpha) {
   }
   drawP5Variant(p, variant, piece, cycle, cx, cy, size, a, b);
   p.blendMode(p.BLEND);
+}
+
+function drawP5Engine(p, engine, piece, cycle, cx, cy, size, a, b) {
+  const seed = hash(`${piece.date}:${piece.title}:engine`);
+  if (engine === "notebook-lines") {
+    p.noFill();
+    for (let i = 0; i < 18; i += 1) {
+      p.stroke(i % 2 ? a[0] : b[0], i % 2 ? a[1] : b[1], i % 2 ? a[2] : b[2], 110);
+      p.beginShape();
+      for (let j = 0; j < 60; j += 1) {
+        const t = j / 59;
+        p.vertex(cx + (t - 0.5) * size, cy + (i - 9) * size * 0.038 + Math.sin(t * 10 + cycle + i) * size * 0.03);
+      }
+      p.endShape();
+    }
+    return;
+  }
+  if (engine === "dot-matrix") {
+    p.noStroke();
+    for (let y = 0; y < 13; y += 1) {
+      for (let x = 0; x < 19; x += 1) {
+        const wave = Math.sin(cycle * 3 + x * 0.6 + y * 0.8 + seed * 0.01);
+        p.fill(a[0], b[1], b[2], 45 + Math.max(0, wave) * 170);
+        p.circle(cx + (x / 18 - 0.5) * size * 0.96, cy + (y / 12 - 0.5) * size * 0.68, size * (0.006 + Math.max(0, wave) * 0.018));
+      }
+    }
+    return;
+  }
+  p.noFill();
+  for (let i = 0; i < 36; i += 1) {
+    const angle = cycle + i / 36 * Math.PI * 2;
+    const r = size * (0.15 + ((i * 11 + seed) % 100) / 100 * 0.34);
+    p.stroke(i % 2 ? b[0] : a[0], i % 2 ? b[1] : a[1], i % 2 ? b[2] : a[2], 128);
+    p.arc(cx + Math.cos(angle) * r * 0.12, cy + Math.sin(angle) * r * 0.12, r, r * 0.58, angle, angle + Math.PI * 0.7);
+  }
 }
 
 function drawP5Variant(p, variant, piece, cycle, cx, cy, size, a, b) {
@@ -361,10 +403,12 @@ function pickVideoFormat() { const candidates = [{ mimeType: "video/mp4;codecs=h
 function pickAlphaVideoFormat() { const candidates = [{ mimeType: "video/webm;codecs=vp9", extension: "webm" }, { mimeType: "video/webm;codecs=vp8", extension: "webm" }, { mimeType: "video/webm", extension: "webm" }]; return candidates.find((candidate) => MediaRecorder.isTypeSupported(candidate.mimeType)); }
 function pickPiece(date) { const direct = drops.find((piece) => piece.date === date); if (direct) return direct; const seed = hash(date); const hueA = fract(seed * 0.0183); const hueB = fract(hueA + 0.38); return { date, title: `Generated p5 Loop ${date.replaceAll("-", ".")}`, loopSeconds: [8, 12, 16, 20][seed % 4], palette: [...hsv(hueA, 0.72, 0.94), ...hsv(hueB, 0.66, 0.9)], copy: "日付シードから生成されるp5.js VJループ。スケッチとして読めるコードとブラウザプレビューを公開する。", why: "p5.jsはクリエイティブコーディングと日次スケッチ公開に向く。小さな生成ルールを積み上げやすく、販売用映像は同じ位相設計で録画できる。" }; }
 function pieceVariant(piece) { const title = String(piece.title || "").toLowerCase(); if (title.includes("learning")) return 0; if (title.includes("arc") || title.includes("bloom")) return 1; if (title.includes("dot") || title.includes("matrix")) return 2; return hash(`${piece.date}:${piece.title}:p5`) % 4; }
+function pieceEngine(piece) { return piece.engine || "sketch-rings"; }
 function makeRecipe(piece) { return `// Daily p5.js VJ Loop
 // Date: ${piece.date}
 // Title: ${piece.title}
 // Loop seconds: ${piece.loopSeconds}
+// Engine: ${pieceEngine(piece)}
 // Variant: ${pieceVariant(piece)}
 // Palette A: ${piece.palette.slice(0, 3).join(", ")}
 // Palette B: ${piece.palette.slice(3, 6).join(", ")}

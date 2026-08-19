@@ -2,8 +2,8 @@
   "date": "2026-08-20",
   "headline": "Dot Matrix Study",
   "headlineEn": "Dot Matrix Study",
-  "summary": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
-  "summaryEn": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+  "summary": "手描きノートのような線の重なりを使うp5.jsループ。",
+  "summaryEn": "手描きノートのような線の重なりを使うp5.jsループ。",
   "links": [
     {
       "label": "Today's sample",
@@ -34,8 +34,8 @@
     {
       "title": "今日の制作メモ",
       "titleEn": "Production note",
-      "body": "p5.jsはクリエイティブコーディングとスケッチ共有に向く。小さなdrawループで日次素材を作れるため、制作メモとコード公開の相性が良い。",
-      "bodyEn": "p5.jsはクリエイティブコーディングとスケッチ共有に向く。小さなdrawループで日次素材を作れるため、制作メモとコード公開の相性が良い。",
+      "body": "リング中心ではなく、学習スケッチやドローイングの文脈を別エンジンにする。",
+      "bodyEn": "リング中心ではなく、学習スケッチやドローイングの文脈を別エンジンにする。",
       "links": [
         {
           "label": "p5.js Reference",
