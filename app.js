@@ -69,6 +69,7 @@ function renderP5(p, piece, phase, alpha) {
   const cy = h / 2;
   const size = Math.min(w, h);
   const cycle = phase * Math.PI * 2;
+  const variant = pieceVariant(piece);
   const a = rgb(piece.palette.slice(0, 3));
   const b = rgb(piece.palette.slice(3, 6));
   p.clear();
@@ -111,7 +112,54 @@ function renderP5(p, piece, phase, alpha) {
     const outer = size * (0.47 + 0.025 * Math.cos(cycle * 2 + i));
     p.line(cx + Math.cos(angle) * inner, cy + Math.sin(angle) * inner, cx + Math.cos(angle) * outer, cy + Math.sin(angle) * outer);
   }
+  drawP5Variant(p, variant, piece, cycle, cx, cy, size, a, b);
   p.blendMode(p.BLEND);
+}
+
+function drawP5Variant(p, variant, piece, cycle, cx, cy, size, a, b) {
+  const seed = hash(`${piece.date}:${piece.title}:p5`);
+  if (variant === 0) {
+    p.noFill();
+    for (let i = 0; i < 10; i += 1) {
+      p.stroke(a[0], a[1], a[2], 80 + i * 8);
+      p.strokeWeight(Math.max(1, size * 0.0025));
+      p.beginShape();
+      for (let j = 0; j < 80; j += 1) {
+        const t = j / 79;
+        const x = cx + (t - 0.5) * size * 0.96;
+        const y = cy + Math.sin(t * Math.PI * 4 + cycle + i * 0.6) * size * (0.04 + i * 0.008) + (i - 5) * size * 0.035;
+        p.vertex(x, y);
+      }
+      p.endShape();
+    }
+  } else if (variant === 1) {
+    p.noFill();
+    for (let i = 0; i < 32; i += 1) {
+      const angle = cycle + i / 32 * Math.PI * 2;
+      const r = size * (0.18 + ((i * 11 + seed) % 100) / 100 * 0.32);
+      p.stroke(i % 2 ? b[0] : a[0], i % 2 ? b[1] : a[1], i % 2 ? b[2] : a[2], 130);
+      p.arc(cx + Math.cos(angle) * r * 0.16, cy + Math.sin(angle) * r * 0.16, r, r * 0.55, angle, angle + Math.PI * 0.72);
+    }
+  } else if (variant === 2) {
+    p.noStroke();
+    const cols = 17;
+    const rows = 11;
+    for (let y = 0; y < rows; y += 1) {
+      for (let x = 0; x < cols; x += 1) {
+        const wave = Math.sin(cycle * 3 + x * 0.7 + y * 0.9);
+        p.fill(a[0], b[1], b[2], 45 + Math.max(0, wave) * 170);
+        p.rect(cx + (x / (cols - 1) - 0.5) * size, cy + (y / (rows - 1) - 0.5) * size * 0.68, size * (0.006 + Math.max(0, wave) * 0.016));
+      }
+    }
+  } else {
+    p.noFill();
+    p.stroke(b[0], b[1], b[2], 145);
+    for (let i = 0; i < 7; i += 1) {
+      p.strokeWeight(Math.max(1, size * (0.002 + i * 0.0004)));
+      p.ellipse(cx, cy, size * (0.18 + i * 0.075), size * (0.08 + i * 0.055));
+      p.rotate(0.04);
+    }
+  }
 }
 
 function renderContent() {
@@ -312,10 +360,12 @@ function markAlphaError() { const b = document.querySelector("#save-alpha"); b.t
 function pickVideoFormat() { const candidates = [{ mimeType: "video/mp4;codecs=h264", extension: "mp4" }, { mimeType: "video/mp4", extension: "mp4" }, { mimeType: "video/webm;codecs=vp9", extension: "webm" }, { mimeType: "video/webm", extension: "webm" }]; return candidates.find((candidate) => MediaRecorder.isTypeSupported(candidate.mimeType)); }
 function pickAlphaVideoFormat() { const candidates = [{ mimeType: "video/webm;codecs=vp9", extension: "webm" }, { mimeType: "video/webm;codecs=vp8", extension: "webm" }, { mimeType: "video/webm", extension: "webm" }]; return candidates.find((candidate) => MediaRecorder.isTypeSupported(candidate.mimeType)); }
 function pickPiece(date) { const direct = drops.find((piece) => piece.date === date); if (direct) return direct; const seed = hash(date); const hueA = fract(seed * 0.0183); const hueB = fract(hueA + 0.38); return { date, title: `Generated p5 Loop ${date.replaceAll("-", ".")}`, loopSeconds: [8, 12, 16, 20][seed % 4], palette: [...hsv(hueA, 0.72, 0.94), ...hsv(hueB, 0.66, 0.9)], copy: "日付シードから生成されるp5.js VJループ。スケッチとして読めるコードとブラウザプレビューを公開する。", why: "p5.jsはクリエイティブコーディングと日次スケッチ公開に向く。小さな生成ルールを積み上げやすく、販売用映像は同じ位相設計で録画できる。" }; }
+function pieceVariant(piece) { const title = String(piece.title || "").toLowerCase(); if (title.includes("learning")) return 0; if (title.includes("arc") || title.includes("bloom")) return 1; if (title.includes("dot") || title.includes("matrix")) return 2; return hash(`${piece.date}:${piece.title}:p5`) % 4; }
 function makeRecipe(piece) { return `// Daily p5.js VJ Loop
 // Date: ${piece.date}
 // Title: ${piece.title}
 // Loop seconds: ${piece.loopSeconds}
+// Variant: ${pieceVariant(piece)}
 // Palette A: ${piece.palette.slice(0, 3).join(", ")}
 // Palette B: ${piece.palette.slice(3, 6).join(", ")}
 
