@@ -13,6 +13,41 @@
   ],
   "drops": [
     {
+      "date": "2026-08-21",
+      "title": "Creative Code Halo",
+      "engine": "sketch-rings",
+      "loopSeconds": 8,
+      "palette": [
+        0.94,
+        0.263,
+        0.814,
+        0.623,
+        0.9,
+        0.306
+      ],
+      "copy": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+      "why": "既存系列として、p5.jsらしいスケッチ感とコード共有しやすさを残す。",
+      "research": [
+        {
+          "date": "2026-08-21",
+          "summary": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+          "sources": [
+            {
+              "label": "p5.js Reference",
+              "url": "https://p5js.org/reference/",
+              "note": "p5.js API確認の基準。"
+            },
+            {
+              "label": "p5.js Tutorials",
+              "url": "https://p5js.org/tutorials/",
+              "note": "スケッチ制作の参照に使う。"
+            }
+          ],
+          "updatedAt": "2026-08-20T21:45:21.370Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-20",
       "title": "Dot Matrix Study",
       "engine": "notebook-lines",
