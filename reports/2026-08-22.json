@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-22",
+  "headline": "Radial Coding Exercise",
+  "headlineEn": "Radial Coding Exercise",
+  "summary": "円弧と短いコードスケッチで構成するp5.jsループ。",
+  "summaryEn": "円弧と短いコードスケッチで構成するp5.jsループ。",
+  "links": [
+    {
+      "label": "Today's sample",
+      "url": "../outputs/2026-08-22_radial-coding-exercise.html"
+    },
+    {
+      "label": "Live preview",
+      "url": "../live.html"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js",
+      "url": "https://p5js.org/"
+    },
+    {
+      "label": "p5.js createCanvas",
+      "url": "https://p5js.org/reference/p5/createCanvas/"
+    },
+    {
+      "label": "p5.js frameRate",
+      "url": "https://p5js.org/reference/p5/frameRate/"
+    }
+  ],
+  "sections": [
+    {
+      "title": "今日の制作メモ",
+      "titleEn": "Production note",
+      "body": "教材的な読みやすさを保ちながら、構造を円弧中心に絞った系列として増やす。",
+      "bodyEn": "教材的な読みやすさを保ちながら、構造を円弧中心に絞った系列として増やす。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js",
+          "url": "https://p5js.org/"
+        }
+      ]
+    },
+    {
+      "title": "Daily Research 2026-08-22",
+      "titleEn": "Daily Research 2026-08-22",
+      "body": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+      "bodyEn": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+      "links": [
+        {
+          "label": "p5.js createCanvas",
+          "url": "https://p5js.org/reference/p5/createCanvas/"
+        },
+        {
+          "label": "p5.js frameRate",
+          "url": "https://p5js.org/reference/p5/frameRate/"
+        }
+      ]
+    },
+    {
+      "title": "今日のミニ試作候補",
+      "titleEn": "Today's mini prototype candidate",
+      "body": "Radial Coding Exercise を 20 秒でループするVJサンプルとして固定しました。GitHub Pagesでは軽量プレビューを見せ、販売用のMP4やalpha MOVは選抜後にMac miniで固定FPSレンダーします。",
+      "bodyEn": "Radial Coding Exercise is fixed as a 20-second looping VJ sample. GitHub Pages carries the lightweight preview, while saleable MP4 and alpha MOV masters should be rendered later on the Mac mini at fixed FPS.",
+      "links": [
+        {
+          "label": "Today's sample",
+          "url": "../outputs/2026-08-22_radial-coding-exercise.html"
+        }
+      ]
+    }
+  ]
+}
