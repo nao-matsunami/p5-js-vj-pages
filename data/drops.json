@@ -13,6 +13,41 @@
   ],
   "drops": [
     {
+      "date": "2026-08-24",
+      "title": "Handwritten Signal Lines",
+      "engine": "notebook-lines",
+      "loopSeconds": 12,
+      "palette": [
+        0.94,
+        0.862,
+        0.263,
+        0.306,
+        0.802,
+        0.9
+      ],
+      "copy": "手描きノートのような線の重なりを使うp5.jsループ。",
+      "why": "リング中心ではなく、学習スケッチやドローイングの文脈を別エンジンにする。",
+      "research": [
+        {
+          "date": "2026-08-24",
+          "summary": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+          "sources": [
+            {
+              "label": "p5.js createCanvas",
+              "url": "https://p5js.org/reference/p5/createCanvas/",
+              "note": "キャンバス初期化の確認。"
+            },
+            {
+              "label": "p5.js frameRate",
+              "url": "https://p5js.org/reference/p5/frameRate/",
+              "note": "フレーム制御の確認。"
+            }
+          ],
+          "updatedAt": "2026-08-23T21:45:19.281Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-23",
       "title": "Pixel Learning Grid",
       "engine": "dot-matrix",
