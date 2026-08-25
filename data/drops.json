@@ -13,6 +13,41 @@
   ],
   "drops": [
     {
+      "date": "2026-08-26",
+      "title": "Circular Notebook Gate",
+      "engine": "arc-study",
+      "loopSeconds": 20,
+      "palette": [
+        0.431,
+        0.94,
+        0.263,
+        0.325,
+        0.306,
+        0.9
+      ],
+      "copy": "円弧と短いコードスケッチで構成するp5.jsループ。",
+      "why": "教材的な読みやすさを保ちながら、構造を円弧中心に絞った系列として増やす。",
+      "research": [
+        {
+          "date": "2026-08-26",
+          "summary": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+          "sources": [
+            {
+              "label": "p5.js createCanvas",
+              "url": "https://p5js.org/reference/p5/createCanvas/",
+              "note": "キャンバス初期化の確認。"
+            },
+            {
+              "label": "p5.js frameRate",
+              "url": "https://p5js.org/reference/p5/frameRate/",
+              "note": "フレーム制御の確認。"
+            }
+          ],
+          "updatedAt": "2026-08-25T21:45:23.748Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-25",
       "title": "Arc Notebook Pulse",
       "engine": "sketch-rings",
