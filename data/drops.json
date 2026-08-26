@@ -13,6 +13,41 @@
   ],
   "drops": [
     {
+      "date": "2026-08-27",
+      "title": "Dot Matrix Study",
+      "engine": "dot-matrix",
+      "loopSeconds": 16,
+      "palette": [
+        0.479,
+        0.263,
+        0.94,
+        0.9,
+        0.662,
+        0.306
+      ],
+      "copy": "点配列とマトリクス構造を主役にしたp5.jsループ。",
+      "why": "グリッドと点の運動を主軸にし、LED/低解像度表示へ展開しやすい素材にする。",
+      "research": [
+        {
+          "date": "2026-08-27",
+          "summary": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+          "sources": [
+            {
+              "label": "p5.js Reference",
+              "url": "https://p5js.org/reference/",
+              "note": "p5.js API確認の基準。"
+            },
+            {
+              "label": "p5.js Tutorials",
+              "url": "https://p5js.org/tutorials/",
+              "note": "スケッチ制作の参照に使う。"
+            }
+          ],
+          "updatedAt": "2026-08-26T21:45:20.170Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-26",
       "title": "Circular Notebook Gate",
       "engine": "arc-study",
