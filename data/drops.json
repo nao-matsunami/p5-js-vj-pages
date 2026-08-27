@@ -13,6 +13,41 @@
   ],
   "drops": [
     {
+      "date": "2026-08-28",
+      "title": "Notebook Wave Study",
+      "engine": "notebook-lines",
+      "loopSeconds": 12,
+      "palette": [
+        0.94,
+        0.263,
+        0.839,
+        0.645,
+        0.9,
+        0.306
+      ],
+      "copy": "手描きノートのような線の重なりを使うp5.jsループ。",
+      "why": "リング中心ではなく、学習スケッチやドローイングの文脈を別エンジンにする。",
+      "research": [
+        {
+          "date": "2026-08-28",
+          "summary": "今日はp5.jsのdrawループと時間設計を優先した。小さな生成ルールを毎日追加しやすく、Canvas 2Dよりも作品ノートとして見せやすい。",
+          "sources": [
+            {
+              "label": "p5.js createCanvas",
+              "url": "https://p5js.org/reference/p5/createCanvas/",
+              "note": "キャンバス初期化の確認。"
+            },
+            {
+              "label": "p5.js frameRate",
+              "url": "https://p5js.org/reference/p5/frameRate/",
+              "note": "フレーム制御の確認。"
+            }
+          ],
+          "updatedAt": "2026-08-27T21:45:18.145Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-27",
       "title": "Dot Matrix Study",
       "engine": "dot-matrix",
