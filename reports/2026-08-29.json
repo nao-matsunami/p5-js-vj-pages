@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-29",
+  "headline": "Sketch Bloom Grid",
+  "headlineEn": "Sketch Bloom Grid",
+  "summary": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+  "summaryEn": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+  "links": [
+    {
+      "label": "Today's sample",
+      "url": "../outputs/2026-08-29_sketch-bloom-grid.html"
+    },
+    {
+      "label": "Live preview",
+      "url": "../live.html"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js",
+      "url": "https://p5js.org/"
+    },
+    {
+      "label": "p5.js Reference",
+      "url": "https://p5js.org/reference/"
+    },
+    {
+      "label": "p5.js Tutorials",
+      "url": "https://p5js.org/tutorials/"
+    }
+  ],
+  "sections": [
+    {
+      "title": "今日の制作メモ",
+      "titleEn": "Production note",
+      "body": "既存系列として、p5.jsらしいスケッチ感とコード共有しやすさを残す。",
+      "bodyEn": "既存系列として、p5.jsらしいスケッチ感とコード共有しやすさを残す。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js",
+          "url": "https://p5js.org/"
+        }
+      ]
+    },
+    {
+      "title": "Daily Research 2026-08-29",
+      "titleEn": "Daily Research 2026-08-29",
+      "body": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+      "bodyEn": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+      "links": [
+        {
+          "label": "p5.js Reference",
+          "url": "https://p5js.org/reference/"
+        },
+        {
+          "label": "p5.js Tutorials",
+          "url": "https://p5js.org/tutorials/"
+        }
+      ]
+    },
+    {
+      "title": "今日のミニ試作候補",
+      "titleEn": "Today's mini prototype candidate",
+      "body": "Sketch Bloom Grid を 8 秒でループするVJサンプルとして固定しました。GitHub Pagesでは軽量プレビューを見せ、販売用のMP4やalpha MOVは選抜後にMac miniで固定FPSレンダーします。",
+      "bodyEn": "Sketch Bloom Grid is fixed as a 8-second looping VJ sample. GitHub Pages carries the lightweight preview, while saleable MP4 and alpha MOV masters should be rendered later on the Mac mini at fixed FPS.",
+      "links": [
+        {
+          "label": "Today's sample",
+          "url": "../outputs/2026-08-29_sketch-bloom-grid.html"
+        }
+      ]
+    }
+  ]
+}

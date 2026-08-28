@@ -13,6 +13,41 @@
   ],
   "drops": [
     {
+      "date": "2026-08-29",
+      "title": "Sketch Bloom Grid",
+      "engine": "sketch-rings",
+      "loopSeconds": 8,
+      "palette": [
+        0.455,
+        0.94,
+        0.263,
+        0.306,
+        0.308,
+        0.9
+      ],
+      "copy": "p5.jsで書く、円弧、粒子、グリッドを組み合わせた読みやすいVJスケッチ。",
+      "why": "既存系列として、p5.jsらしいスケッチ感とコード共有しやすさを残す。",
+      "research": [
+        {
+          "date": "2026-08-29",
+          "summary": "今日はp5.jsをスケッチ公開の軸として見た。コードの読みやすさと教育的な文脈が強く、制作メモと一緒に日次公開するシリーズに向いている。",
+          "sources": [
+            {
+              "label": "p5.js Reference",
+              "url": "https://p5js.org/reference/",
+              "note": "p5.js API確認の基準。"
+            },
+            {
+              "label": "p5.js Tutorials",
+              "url": "https://p5js.org/tutorials/",
+              "note": "スケッチ制作の参照に使う。"
+            }
+          ],
+          "updatedAt": "2026-08-28T21:45:22.044Z"
+        }
+      ]
+    },
+    {
       "date": "2026-08-28",
       "title": "Notebook Wave Study",
       "engine": "notebook-lines",
